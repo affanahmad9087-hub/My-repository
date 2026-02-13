@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Countdown</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="title-container">
+        <h1 class="title">Countdown to Ramadan 2026</h1>
+    </div>
+
+    <div class="countdown-container" id="countdown-ui">
+        
+        <div class="time-group">
+            <div class="digit-row">
+                <div class="digit-box" id="d1">0</div>
+                <div class="digit-box" id="d2">0</div>
+            </div>
+            <div class="label">Days</div>
+        </div>
+
+        <div class="separator">:</div>
+
+        <div class="time-group">
+            <div class="digit-row">
+                <div class="digit-box" id="h1">0</div>
+                <div class="digit-box" id="h2">0</div>
+            </div>
+            <div class="label">Hours</div>
+        </div>
+
+        <div class="separator">:</div>
+
+        <div class="time-group">
+            <div class="digit-row">
+                <div class="digit-box" id="m1">0</div>
+                <div class="digit-box" id="m2">0</div>
+            </div>
+            <div class="label">Minutes</div>
+        </div>
+
+        <div class="separator">:</div>
+
+        <div class="time-group">
+            <div class="digit-row">
+                <div class="digit-box" id="s1">0</div>
+                <div class="digit-box" id="s2">0</div>
+            </div>
+            <div class="label">Seconds</div>
+        </div>
+
+    </div>
+
+    <h1 class="finished-message" id="end-msg">RAMADAN HAS ARRIVED</h1>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
