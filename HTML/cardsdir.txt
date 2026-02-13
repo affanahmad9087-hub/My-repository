@@ -1,0 +1,85 @@
+.card-ka-papa{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 70px;
+}
+
+.card1{
+    background: linear-gradient(
+    to right,
+    #b57ce0, #00e2ff
+    );
+    padding: 50px;
+    border-radius: 25px;
+    text-align: center;
+    color: #000000;
+    transition: transform 0.3s ease;
+    height: 40vh;
+    width: 40vw;
+    margin-top: 30px;
+}
+
+.card2{
+    background: linear-gradient(
+  to right,
+  #f1e6a8 0%,  #f1e6a8 4%,
+  #e7d48c 4%,  #e7d48c 8%,
+  #e0c26b 8%,  #e0c26b 12%,
+  #d8b24a 12%, #d8b24a 16%,
+  #d09a2a 16%, #d09a2a 20%,
+  #c98a00 20%, #c98a00 24%,
+  #bf7600 24%, #bf7600 28%,
+  #b05a00 28%, #b05a00 32%,
+  #a04400 32%, #a04400 36%,
+  #9a2b00 36%, #9a2b00 40%,
+  #8b0000 40%, #8b0000 45%,
+  #7a0000 45%, #7a0000 50%,
+  #680000 50%, #680000 56%,
+  #560000 56%, #560000 62%,
+  #440000 62%, #440000 70%,
+  #320000 70%, #320000 80%,
+  #1f0000 80%, #1f0000 100%
+);
+    padding: 50px;
+    border-radius: 25px;
+    text-align: center;
+    color: #000000;
+    transition: transform 0.3s ease;
+    height: 40vh;
+    width: 40vw;
+    margin-top: 30px;
+}
+
+.card3{
+    background: linear-gradient(
+    to right,
+    #ff0000,
+    #ff6f00,
+    #ff9500
+);
+    padding: 50px;
+    border-radius: 25px;
+    text-align: center;
+    color: #000000;
+    transition: transform 0.3s ease;
+    height: 40vh;
+    width: 40vw;
+    margin-top: 30px;
+}
+
+.card4{
+    background: radial-gradient(
+    circle,
+    #007bff 0%, #007bff 40%,
+    #00c8ff 90%, #00c8ff 100%
+);
+    padding: 50px;
+    border-radius: 25px;
+    text-align: center;
+    color: #000000;
+    transition: transform 0.3s ease;
+    height: 40vh;
+    width: 40vw;
+    margin-top: 30px;
+}

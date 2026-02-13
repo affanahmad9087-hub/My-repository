@@ -1,0 +1,3 @@
+# This file is used internally by FFMPEG.
+file 'file:D:/Affan/Python/media/videos/intro/480p15/partial_movie_files/SphereScene/4291183755_3531446126_1561834940.mp4'
+file 'file:D:/Affan/Python/media/videos/intro/480p15/partial_movie_files/SphereScene/1574240391_4141849542_271014715.mp4'

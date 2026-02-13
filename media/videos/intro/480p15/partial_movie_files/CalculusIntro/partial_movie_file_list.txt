@@ -1,0 +1,6 @@
+# This file is used internally by FFMPEG.
+file 'file:D:/Affan/Python/media/videos/intro/480p15/partial_movie_files/CalculusIntro/1584795214_1729420369_223132457.mp4'
+file 'file:D:/Affan/Python/media/videos/intro/480p15/partial_movie_files/CalculusIntro/4072820271_4162468696_1148675566.mp4'
+file 'file:D:/Affan/Python/media/videos/intro/480p15/partial_movie_files/CalculusIntro/4072820271_2800102121_2418140209.mp4'
+file 'file:D:/Affan/Python/media/videos/intro/480p15/partial_movie_files/CalculusIntro/4072820271_170478949_1373759317.mp4'
+file 'file:D:/Affan/Python/media/videos/intro/480p15/partial_movie_files/CalculusIntro/4072820271_2872842549_3987776556.mp4'

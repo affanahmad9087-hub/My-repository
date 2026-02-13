@@ -1,0 +1,15 @@
+body{
+    display : flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    background : linear-gradient(0deg, #d467e4, #8216dd);
+    height : 100vh;
+    font-size : 160px;
+}
+
+h1{
+    opacity : 100;
+    margin-left: 100px;
+    font-family: "Times New Roman", ui-rounded;
+}
