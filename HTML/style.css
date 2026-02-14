@@ -6,7 +6,11 @@
 }
 
 body {
-    background: #3c3c3c;
+    background-image: url("media/12345678.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     color: #ffffff;
     font-family: 'JetBrains Mono', monospace;
     overflow-x: hidden;
