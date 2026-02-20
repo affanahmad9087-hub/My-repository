@@ -1,56 +1,52 @@
-function startCountdown() {
-    // TARGET DATE: Feb 18, 2026 at 6:14 PM (18:14:00)
-    const targetDate = new Date("February 18, 2026 18:14:00").getTime();
+function updateCountdown() {
+    // 1. Set the target date (Ramadan 2026 is expected around Feb 18)
+    const targetDate = new Date("February 18, 2026 00:00:00").getTime();
+    const now = new Date().getTime();
+    const gap = targetDate - now;
 
-    const interval = setInterval(() => {
-        const now = new Date().getTime();
-        const distance = targetDate - now;
+    // 2. Check if the time has reached zero
+    if (gap <= 0) {
+    const topSection = document.querySelector(".p1-container");
+    if (topSection) topSection.style.display = "none";
 
-        // 1. If countdown is finished
-        if (distance < 0) {
-            clearInterval(interval);
-            document.getElementById("countdown-ui").style.display = "none";
-            document.getElementById("end-msg").style.display = "block";
-            return;
-        }
+    const endMsg = document.getElementById("end-msg");
+    if (endMsg) endMsg.style.display = "block";
 
-        // 2. Math Calculations
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    document.body.classList.add("celebration-bg");
 
-        // 3. String formatting (Ensuring we always have 2 digits, e.g. "05")
-        const dStr = days.toString().padStart(2, '0');
-        const hStr = hours.toString().padStart(2, '0');
-        const mStr = minutes.toString().padStart(2, '0');
-        const sStr = seconds.toString().padStart(2, '0');
-
-        // 4. Update the specific boxes (Split Digits)
-        
-        // Days (Handle potential 3-digit days if necessary)
-        // If days > 99, this grabs the last two digits. 
-        // If you expect > 99 days, let me know and we can add a 3rd box!
-        const d1Value = dStr.length > 2 ? dStr[dStr.length-2] : dStr[0];
-        const d2Value = dStr[dStr.length-1];
-
-        document.getElementById("d1").innerText = d1Value;
-        document.getElementById("d2").innerText = d2Value;
-
-        // Hours
-        document.getElementById("h1").innerText = hStr[0];
-        document.getElementById("h2").innerText = hStr[1];
-
-        // Minutes
-        document.getElementById("m1").innerText = mStr[0];
-        document.getElementById("m2").innerText = mStr[1];
-
-        // Seconds
-        document.getElementById("s1").innerText = sStr[0];
-        document.getElementById("s2").innerText = sStr[1];
-
-    }, 1000);
+    return; 
 }
 
-// Start the engine
-startCountdown();
+    // 3. Math calculations for Days, Hours, Minutes, Seconds
+    const second = 1000;
+    const minute = second * 60;
+    const hour = minute * 60;
+    const day = hour * 24;
+
+    const d = Math.floor(gap / day);
+    const h = Math.floor((gap % day) / hour);
+    const m = Math.floor((gap % hour) / minute);
+    const s = Math.floor((gap % minute) / second);
+
+    // 4. Helper to split numbers into two digits (e.g., 9 becomes "0" and "9")
+    const format = (num) => String(num).padStart(2, '0').split('');
+
+    // 5. Update the HTML elements
+    const [d1, d2] = format(d);
+    const [h1, h2] = format(h);
+    const [m1, m2] = format(m);
+    const [s1, s2] = format(s);
+
+    document.getElementById("d1").innerText = d1;
+    document.getElementById("d2").innerText = d2;
+    document.getElementById("h1").innerText = h1;
+    document.getElementById("h2").innerText = h2;
+    document.getElementById("m1").innerText = m1;
+    document.getElementById("m2").innerText = m2;
+    document.getElementById("s1").innerText = s1;
+    document.getElementById("s2").innerText = s2;
+}
+
+// Update every second
+setInterval(updateCountdown, 1000);
+updateCountdown(); // Run immediately on load

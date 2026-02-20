@@ -12,11 +12,16 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-color: #3c3c3c; 
-    
+    transition: background-image 2s ease-in-out, background-color 2s ease-in-out;
     color: #ffffff;
     font-family: 'JetBrains Mono', monospace;
     overflow-x: hidden;
     line-height: 1.5;
+}
+
+body.celebration-bg {
+    background-image: url("media/celebration.jpg"); /* Or any other image you like */
+    background-color: #000; /* Optional: a different fallback color */
 }
 
 /* This container ensures the timer stays centered and fills the screen */
@@ -128,4 +133,13 @@ table {
     .separator {
         display: none; /* Hide separators on tiny phones to save space */
     }
+}
+
+.finished-message {
+    display: none; /* Keep it hidden until JS triggers it */
+    font-size: clamp(2rem, 8vw, 4rem);
+    color: #00ffaa;
+    text-align: center;
+    text-shadow: 0 0 20px rgba(0, 255, 170, 0.8);
+    margin-top: 2rem;
 }
