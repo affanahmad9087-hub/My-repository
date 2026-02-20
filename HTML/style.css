@@ -1,145 +1,102 @@
-/* --- RESET & LAYOUT --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@font-face {
+    font-family: "Arvo Regular";
+    src: url("Fonts/ARVO-REGULAR.TTF") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
 
 body {
-    background-image: url("media/12345678.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background: #B83B5E;
     background-repeat: no-repeat;
-    background-color: #3c3c3c; 
-    transition: background-image 2s ease-in-out, background-color 2s ease-in-out;
-    color: #ffffff;
-    font-family: 'JetBrains Mono', monospace;
-    overflow-x: hidden;
-    line-height: 1.5;
+    margin: 0; /* Ensures the gradient hits the edges */
+    height: 100vh;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
 }
 
-body.celebration-bg {
-    background-image: url("media/celebration.jpg"); /* Or any other image you like */
-    background-color: #000; /* Optional: a different fallback color */
+.card{
+    background: rgba(255, 255, 255, 0.1); /* Transparent white */
+    backdrop-filter: blur(10px);          /* The "frosted" part */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    height: 27rem;
+    width: 48rem;
+    transition: transform 0.3s ease-in-out;
 }
 
-/* This container ensures the timer stays centered and fills the screen */
-.p1-container {
+.card:hover{
+    transform: translateY(-10px);
+}
+
+.main{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh; 
-    width: 100%;
-    padding: 20px;
-}
-
-.title-container {
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.title {
-    /* clamp(min, preferred, max) - perfectly responsive font size */
-    font-size: clamp(1.5rem, 5vw, 2.5rem); 
-    color: #00ffaa;
-    text-shadow: 0 0 10px rgba(0, 255, 170, 0.5);
-}
-
-/* --- RESPONSIVE TIMER --- */
-.countdown-container {
-    display: flex;
-    flex-wrap: wrap; /* Allows items to wrap on very small screens */
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
-    width: 100%;
+    gap: 4rem;
+    margin-right: 4.8rem;
 }
 
-.time-group {
+
+
+.navbar{
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: space-between; 
+    align-items: center;           
+    padding: 15px 40px;            
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);  
+    position: fixed;               
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%); /* Centers the fixed bar */
+    width: 85vw;
+    z-index: 1000;                 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: 100px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    animation: FadeIn 0.5s ease-in-out;
 }
 
-.digit-row {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.digit-box {
-    /* Using vmin ensures the boxes scale based on the smaller screen dimension */
-    width: clamp(45px, 15vw, 100px);
-    height: clamp(65px, 20vw, 140px);
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background: linear-gradient(to bottom, #2a2a2a 50%, #1f1f1f 50%);
-    border-radius: 8px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-    
-    font-size: clamp(1.5rem, 8vw, 4rem);
+.logo{
+    font-family: 'Arvo Regular', serif; 
+    font-size: 24px;
     font-weight: 800;
-    border: 1px solid #333;
+    color: #FFFFFF;
+    text-decoration: none;
+    letter-spacing: 4px;
 }
 
-.separator {
-    font-size: 2rem;
-    font-weight: 800;
-    color: rgba(255, 255, 255, 0.5);
-    display: flex;
-    align-items: center;
-    padding-bottom: 1.5rem; /* Aligns with the boxes, not the labels */
-}
-
-.label {
-    margin-top: 0.8rem;
-    font-size: clamp(0.6rem, 2vw, 0.8rem);
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-    color: #00ffaa;
-}
-
-/* --- TABLE SECTION --- */
-.table-section {
-    width: 100%;
-    padding: 40px 15px;
-    background: rgba(26, 26, 26, 0.95);
+.main-calc{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    gap: 4rem;
 }
 
-.table-wrapper {
-    width: 100%;
-    overflow-x: auto; /* Adds a scrollbar if the table is too wide for mobile */
+.calc{
+    background: #FFFFFF;         /* The "frosted" part */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    height: 30rem;
+    width: 30rem;
 }
 
-table {
-    width: 100%;
-    max-width: 800px;
-    border-collapse: collapse;
-    background: #222;
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+.v-rule {
+    width: 1px;
+    height: 80vh; /* Makes it slightly shorter than the container for a cleaner look */
+    background: rgba(0, 0, 0, 0.2);
+    margin: 0 2px; /* Adds space on the left and right */
+    align-self: center; /* Centers it vertically if using Flexbox */
 }
 
-/* --- MOBILE SPECIFIC TWEAKS --- */
-@media (max-width: 480px) {
-    .countdown-container {
-        gap: 0.8rem;
-    }
-    .separator {
-        display: none; /* Hide separators on tiny phones to save space */
-    }
-}
-
-.finished-message {
-    display: none; /* Keep it hidden until JS triggers it */
-    font-size: clamp(2rem, 8vw, 4rem);
-    color: #00ffaa;
-    text-align: center;
-    text-shadow: 0 0 20px rgba(0, 255, 170, 0.8);
-    margin-top: 2rem;
-}
