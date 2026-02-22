@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atmosphere Weather</title>
+    <style>
+        /* 1. DEFINE THE BUCKETS (Variables) */
+        :root {
+            /* Sunny Theme */
+            --bg-top: #F9ED69;
+            --bg-bottom: #F08A5D;
+            --accent: #ffffff;
+            --text-color: #ffffff;
+            --glass: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Redefining buckets for Stormy */
+        .stormy {
+            --bg-top: #6A2C70;
+            --bg-bottom: #B83B5E;
+            --accent: #00f2ff; /* Cyan Neon */
+            --text-color: #00f2ff;
+            --glass: rgba(0, 0, 0, 0.3);
+        }
+
+        /* 2. LAYOUT LOGIC */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', sans-serif;
+            /* Using the variables for the background */
+            background: linear-gradient(to bottom, var(--bg-top), var(--bg-bottom));
+            transition: all 0.8s ease; /* Smooth transition when theme swaps */
+        }
+
+        .card {
+            width: 300px;
+            padding: 40px;
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            border-radius: 30px;
+            text-align: center;
+            /* Using variable for the neon glow border */
+            border: 2px solid var(--accent);
+            box-shadow: 0 0 20px var(--glass);
+            color: var(--text-color);
+        }
+
+        .city {
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .temp {
+            font-size: 5rem;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .desc {
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Button to test the swap */
+        .toggle-btn {
+            position: fixed;
+            bottom: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            background: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="sunny" id="mainBody">
+
+    <div class="card">
+        <div class="city">NEON CITY</div>
+        <div class="temp">28°C</div>
+        <div class="desc">Clear Skies</div>
+    </div>
+
+    <button class="toggle-btn" onclick="toggleWeather()">SWAP WEATHER</button>
+
+    <script>
+        function toggleWeather() {
+            const body = document.getElementById('mainBody');
+            body.classList.toggle('stormy');
+            
+            // Just some text changing logic
+            const desc = document.querySelector('.desc');
+            const temp = document.querySelector('.temp');
+            if(body.classList.contains('stormy')) {
+                desc.innerText = "Electric Storm";
+                temp.innerText = "14°C";
+            } else {
+                desc.innerText = "Clear Skies";
+                temp.innerText = "28°C";
+            }
+        }
+    </script>
+</body>
+</html>

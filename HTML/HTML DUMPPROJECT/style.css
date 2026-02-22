@@ -1,0 +1,177 @@
+body {
+    background: #1D2B53;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+@font-face {
+    font-family: "Arvo Regular";
+    src: url("Fonts/ARVO-REGULAR.TTF") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;           
+    padding: 1px 40px;            
+    background-color: rgba(255, 255, 255, 0.1);
+    position: fixed;               
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%); /* Centers the fixed bar */
+    width: 85vw;
+    z-index: 1000;                 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: 100px;
+}
+
+.logo {
+    font-family: 'Arvo Regular', serif; 
+    font-size: 24px;
+    font-weight: 800;
+    color: #000000;
+    text-decoration: none;
+    letter-spacing: 4px;           
+    transition: all 300ms ease-in-out;
+}
+
+.logo:hover{
+    color: #FFFFFF;
+    transform: scale(1.05);
+}
+
+.btn{
+    background: #FAEF5D;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: "Arvo Regular";
+    font-size: 48pt;
+    font-weight: 1000;
+    transition: all 300ms ease-in-out;
+    border:5px solid #FAEF5D;
+    box-shadow: 0 0 10px 4px #FAEF5D;
+    color: #000000;
+}
+
+.btn:hover{
+    background: #FF004D;
+    border: 5px solid #FF004D;
+    box-shadow: 0 0 10px 4px #FF004D;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+.neon-btn {
+  position: relative;
+  padding: 3px; /* This creates the "border" thickness */
+  background: linear-gradient(to right, #F9ED69, #6A2C70); /* Fallback */
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  overflow: hidden; /* Keeps the animation inside the button */
+}
+
+/* The spinning light effect */
+.neon-btn::before {
+  content: '';
+  position: absolute;
+  width: 150%;
+  height: 400%;
+  background: conic-gradient(#F9ED69, #F08A5D, #B83B5E, #6A2C70, #F9ED69);
+  left: -25%;
+  top: -150%;
+  animation: rotate 3s linear infinite;
+}
+
+/* The "Glass" middle that covers the center of the spinning gradient */
+.neon-btn span {
+  position: relative;
+  display: block;
+  padding: 15px 35px;
+  background: #000; /* Match your background */
+  color: white;
+  border-radius: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.1rem;
+  z-index: 1;
+  transition: 0.3s;
+}
+
+/* Hover effect: Make the glass go transparent */
+.neon-btn:hover span {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.cyber-btn {
+  position: relative;
+  background: transparent;
+  color: #B83B5E; /* Your signature pink */
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.2rem;
+  padding: 15px 30px;
+  border: 1px solid rgba(184, 59, 94, 0.2); /* Faint border */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* The Top-Left and Bottom-Right Brackets */
+.cyber-btn::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 0;
+  height: 0;
+  border-top: 2px solid #F9ED69;   /* Yellow corner */
+  border-left: 2px solid #F9ED69;
+  transition: 0.3s ease;
+}
+
+/* The Bottom-Right and Top-Right Brackets */
+.cyber-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  width: 0;
+  height: 0;
+  border-bottom: 2px solid #B83B5E; /* Pink corner */
+  border-right: 2px solid #B83B5E;
+  transition: 0.3s ease;
+}
+
+/* THE HOVER EFFECT */
+.cyber-btn:hover {
+  color: #fff;
+  background: rgba(184, 59, 94, 0.1);
+  box-shadow: 0 0 20px rgba(184, 59, 94, 0.2);
+}
+
+.cyber-btn:hover::before,
+.cyber-btn:hover::after {
+  width: 20px;   /* The length of the 'arms' */
+  height: 20px;
+}
+
+/* Optional: Add a subtle glow to the arms */
+.cyber-btn:hover::before {
+  filter: drop-shadow(0 0 5px #F9ED69);
+}
+
+.cyber-btn:hover::after {
+  filter: drop-shadow(0 0 5px #B83B5E);
+}
