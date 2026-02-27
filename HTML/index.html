@@ -4,40 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href="style.css">
-    <title>Personal Portfolio</title>
+
+    <title>Epic Neon Button</title>
 </head>
 <body>
-    <nav class="navbar">
-        <span class="logo">MyPortfolio</span>
-    </nav>
-    <div class="glass-container">
-        <div class="glass-card">
-            <span>Affan's Portfolio</span>
+    <button class="neon-button" id = "neonButton">
+        <span class="button-text">LOGIN</span>
+
+        <div class="login-form">
+            <input type="text" class="neon-input" placeholder="Username">
+            <input type="password" class="neon-input" placeholder="Password">
+            <button type="submit" class="submit-btn">Login</button>
         </div>
-    </div>
-    <div class="card-container">
-        <div class="skill-card">
-            <span>MY SKILLS</span>
-        </div>
-        <div class="skills-grid">
-            <div class="skill-item">HTML5</div>
-            <div class="skill-item">CSS3</div>
-            <div class="skill-item">JavaScript</div>
-            <div class="skill-item">Python</div>
-        </div>
-        <section class="projects">
-        <h2 class="section-title">PROJECTS</h2>
-        <div class="project-container">
-            <div class="glass-card project-card">
-                <h3>Zenith Weather</h3>
-                <p>Real-time weather station with a glass UI.</p>
-            </div>
-            <div class="glass-card project-card">
-                <h3>Countdown Timer</h3>
-                <p>Event tracking for Ramadan 2026.</p>
-            </div>
-        </div>
-        </section>
-    </div>
+    </button>
+    <script src="script.js"></script>
 </body>
 </html>
