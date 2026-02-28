@@ -23,7 +23,7 @@ int main() {// This is a simple C++ program that prints "Hello, World!" to the c
     float sum = x + y;
     std::cout << sum << '\n';//displays the value of the sum variable which is a float hence the 
     // float decleration, which is 5 + 5.6 = 10.6.
-    //if a float value is declared as an in t value, the decimal or the float part is truncated.
+    //if a float value is declared as an int value, the decimal or the float part is truncated.
     //for example:
     int balance = 900.897;
     std::cout << balance << '\n';//prints 900 instead of 900.897.
