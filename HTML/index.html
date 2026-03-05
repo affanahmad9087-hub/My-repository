@@ -1,22 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href="style.css">
+<html>
+    <head>
+        <title>Internal Linking</title>
+        <style>
+            body{background-color:lightyellow; color:red}
+            h1{text-align: center;}
+            img{height: 200px; width: 200px;}
+            .slider-wrapper {
+    width: 100%;
+    overflow: hidden; /* Hides images outside the window */
+    background: #1D2B53;
+    padding: 20px 0;
+}
 
-    <title>Epic Neon Button</title>
-</head>
-<body>
-    <button class="neon-button" id = "neonButton">
-        <span class="button-text">LOGIN</span>
+.slider-track {
+    display: flex;
+    width: calc(250px * 8); /* (Image width * total number of images) */
+    animation: scroll-left 20s linear infinite;
+}
 
-        <div class="login-form">
-            <input type="text" class="neon-input" placeholder="Username">
-            <input type="password" class="neon-input" placeholder="Password">
-            <button type="submit" class="submit-btn">Login</button>
+.slider-track img {
+    width: 250px;
+    height: 150px;
+    margin: 0 10px;
+    border-radius: 10px;
+    border: 2px solid #FF6E64; /* Matching your Neon theme */
+    box-shadow: 0 0 10px #FF6E64;
+}
+
+/* Pause animation on hover */
+.slider-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Move by half the total width of the track */
+        transform: translateX(calc(-250px * 4)); 
+    }
+}
+        </style>
+    </head>
+    <body>
+        <h1>Flower Guide</h1>
+        <br><br>
+        <div class="slider-wrapper">
+            <div class="slider-track">
+                <img src="cactus_flowers_picture_closeup_blooming_6931192.jpg" alt="Cactus Flower">
+                <img src="images.png" alt="Image">
+                <img src="pngimg.com - lotus_flower_PNG7.png" alt="Lotus Flower">
+                <img src="white-hydrangea-bud-cards-background-white-flowers-small-white-flowers-square-poster-banner-square-format-twig-white-hydrangea-252586027.webp" alt="Hydrangea Flower">
+                <img src="cactus_flowers_picture_closeup_blooming_6931192.jpg" alt="Cactus Flower">
+                <img src="images.png" alt="Image">
+                <img src="pngimg.com - lotus_flower_PNG7.png" alt="Lotus Flower">
+                <img src="white-hydrangea-bud-cards-background-white-flowers-small-white-flowers-square-poster-banner-square-format-twig-white-hydrangea-252586027.webp" alt="Hydrangea Flower">
+            </div>
         </div>
-    </button>
-    <script src="script.js"></script>
-</body>
+    </body>
 </html>
